@@ -45,7 +45,7 @@ void app_main(void)
     esp_log_level_set("*", ESP_LOG_DEBUG);
     /* Fill datas */
     setup();
-    make_rect_one();
+    make_rect_two();
     ESP_LOGI(TAG, "Functions created Sucessfully !");
     ESP_LOGI(TAG, "Sampling rate is %.2f Hz (%f ms), the period measure is %f ms", SAMPLING_FREQ, DELTA_X, MEASURE_PERIOD);
     ESP_LOGI(TAG, "Determinate execution time after %d calls", MEASURE_NB);
