@@ -3,6 +3,10 @@
 >This program is made with ESP-IDF V4.4.2, His goal is to measure the time the ESP take to calculate those formula.
 >Used to calculate effective and mean value of a AC or a rectified Sin, in order to give VRMS values.
 
+### Other try : 
+- powf : increase time by 1.7 (2520 instead of 1495) use simple multiplication for same result
+- pow : increase time by 3.19 (4769 instead of 1495) use simple multiplication for same result
+
 # How values are calculated ?
 
 
