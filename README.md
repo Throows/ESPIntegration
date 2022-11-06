@@ -3,9 +3,12 @@
 >This program is made with ESP-IDF V4.4.2, His goal is to measure the time the ESP take to calculate those formula.
 >Used to calculate effective and mean value of a AC or a rectified Sin, in order to give VRMS values.
 
+NOTA BENE : The watchdog has been desactivated (component config -> esp system config -> initalize task watchdog timer on startup (to disable)) 
+
 ### Other try : 
 - powf : increase time by 1.7 (2520 instead of 1495) use simple multiplication for same result
 - pow : increase time by 3.19 (4769 instead of 1495) use simple multiplication for same result
+- Increasing the CPU freqency by X divide the calculation time by X (as expected)
 
 # How values are calculated ?
 

@@ -2,7 +2,7 @@
 #include "esp_timer.h"
 #include "Data.h"
 #include "IntegrateFunc.h"
-const char *TAG = "Integrations";
+const char *TAG = "Integral";
 
 
 const char *func_name[] = {"eff_left", "eff_right", "eff_trap", "mean_left", "mean_right", "mean_trap", "mean"};
@@ -47,7 +47,7 @@ void app_main(void)
     setup();
     make_rect_two();
     ESP_LOGI(TAG, "Functions created Sucessfully !");
-    ESP_LOGI(TAG, "Sampling rate is %.2f Hz (%f ms), the period measure is %f ms", SAMPLING_FREQ, DELTA_X, MEASURE_PERIOD);
+    ESP_LOGI(TAG, "Sampling rate is %.2f Hz (%.4f ms), the period measure is %.4f s", SAMPLING_FREQ, DELTA_X*1000, MEASURE_PERIOD);
     ESP_LOGI(TAG, "Determinate execution time after %d calls", MEASURE_NB);
     for (uint8_t i = 0; i < MAX_TEST; i++)
     {
