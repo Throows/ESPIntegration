@@ -1,5 +1,7 @@
 #include "Data.h"
 
+const char* DATA_TAG = "Data";
+
 void setup()
 {
     if (data_f == NULL)
@@ -20,6 +22,7 @@ void make_cos_data()
         data_f[i] = (float) 20.0 * cos(2.0 * PI * FUNC_FREQ * (1.0 / SAMPLING_FREQ) * i);
         data_d[i] = (double) 20.0 * cos(2.0 * PI * FUNC_FREQ * (1.0 / SAMPLING_FREQ) * i);
     }
+    ESP_LOGI(DATA_TAG, "Using Cosin Function");
 }
 
 void make_rand_data()
@@ -31,6 +34,7 @@ void make_rand_data()
         data_f[i] = (float) (random % 51) + 50;
         data_d[i] = (double) (random % 51) + 50;
     }
+    ESP_LOGI(DATA_TAG, "Using Random Function");
 }
 
 void make_rect_one()
@@ -41,6 +45,7 @@ void make_rect_one()
         data_f[i] = (float) (value > 0) ? value : 0;
         data_d[i] = (double) (value > 0) ? value : 0;
     }
+    ESP_LOGI(DATA_TAG, "Using Half-Wave Rectified Function");
 }
 
 void make_rect_two()
@@ -50,4 +55,5 @@ void make_rect_two()
         data_f[i] = (float) abs(20 * cos(2 * PI * FUNC_FREQ * (1 / SAMPLING_FREQ) * i));
         data_d[i] = (double) abs(20 * cos(2 * PI * FUNC_FREQ * (1 / SAMPLING_FREQ) * i));
     }
+    ESP_LOGI(DATA_TAG, "Using Full-Wave Rectified Function");
 }

@@ -7,14 +7,18 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_task_wdt.h"
+#include "esp_log.h"
 
 #define PI 3.141592
 
 #define MEASURE_NB 5000
-#define NB_MEASURE 512.0
+#define NB_MEASURE 1024.0
 #define SAMPLING_FREQ 1000.0
 #define DELTA_X (float)(1.0 / SAMPLING_FREQ)
 #define MEASURE_PERIOD (float)(DELTA_X * NB_MEASURE)
+
+typedef float (*integrate_f_fc)();
+typedef double (*integrate_d_fc)();
 
 float *data_f;
 double *data_d;
@@ -22,7 +26,7 @@ double *data_d;
 void setup();
 
 /* COS function settings */
-#define FUNC_FREQ 1
+#define FUNC_FREQ 50
 
 void make_cos_data();
 
